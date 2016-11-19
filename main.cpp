@@ -1,41 +1,23 @@
 #include "D:\Инженерка\TX\TXLib.h"
 
-void butulki(int x, int y);
-void chelovechek(int x, int y);
-void drawStoika(int x, int y);
-void chelovechek2(int x, int y);
-
-int main()
+void stand()
 {
-    txCreateWindow(1000, 800);
-    butulki(50, 320);
-    butulki(100, 320);
-    butulki(150, 320);
-    butulki(200, 320);
-    drawStoika( 1000, 550);
-    chelovechek(320, 400);
-    chelovechek2(670, 400);
-    // Фон
-    // Шкаф
-    txSetColour(TX_BROWN);
-    txLine(10, 300, 400, 300);
-    txLine(10, 250, 400, 250);
-    txLine(10, 200, 400, 200);
-    txLine(10, 150, 400, 150);
-    txLine(10, 350, 10,  150);
-    txLine(400, 350, 400,150);
-    // Вывеска
-    txLine(600, 100, 600, 50);
-    txLine(600, 50, 750,  50);
-    txLine(750, 100, 750, 50);
-    txLine(600, 100, 750, 100);
-    txLine(638, 50,  638, 2);
-    txLine(710, 50,  710, 2);
-    // Тeкст с вывески
-    txSelectFont ("Comic Sans MS", 80) ;
-    txTextOut (625, 33, "BAR");
-    return 0;
-
+    while (true)
+    {
+        txSetColour(TX_GREEN);
+        // Вывеска
+        txLine(600, 100, 600, 50);
+        txLine(600, 50, 750,  50);
+        txLine(750, 100, 750, 50);
+        txLine(600, 100, 750, 100);
+        txLine(638, 50,  638, 2);
+        txLine(710, 50,  710, 2);
+        // Тeкст с вывески
+        txSetColour(RGB(random(255),random(255),random(255)));
+        txSelectFont ("Comic Sans MS", 80) ;
+        txTextOut (625, 33, "BAR");
+        txSleep(100);
+    }
 }
 void butulki(int x, int y)
 {
@@ -48,6 +30,8 @@ void butulki(int x, int y)
     txLine(x-13,y,    x-13, y-10);
     txLine(x-6, y-10, x-13, y-10);
     txLine(x-6, y-10, x-6, y);
+    txSelectFont ("Times New Roman", 10) ;
+    txTextOut (x-15, y+15, "DN");
 }
 void drawStoika(int x, int y)
 {
@@ -92,4 +76,31 @@ void chelovechek2(int x, int y)
     txLine(x-20, y+15, x, y);
     txLine(x-20, y+15, x-40, y+5);
 
+}
+
+int main()
+{
+    txCreateWindow(1000, 800);
+    int i = 0;
+    int c = 0;
+    drawStoika( 1000, 550);
+    butulki(50, 320);
+    butulki(100, 320);
+    butulki(150, 320);
+    butulki(200, 320);
+    butulki(250, 320);
+    butulki(300, 320);
+    chelovechek(320, 400);
+    chelovechek2(670, 400);
+    // Фон
+    // Шкаф
+    txSetColour(TX_BROWN);
+    txLine(10, 300, 400, 300);
+    txLine(10, 250, 400, 250);
+    txLine(10, 200, 400, 200);
+    txLine(10, 150, 400, 150);
+    txLine(10, 350, 10,  150);
+    txLine(400, 350, 400,150);
+    stand();
+    return 0;
 }
