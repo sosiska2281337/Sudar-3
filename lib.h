@@ -13,14 +13,14 @@ void stand()
     while (true)
     {
         txSetColour(TX_GREEN);
-        // Вывеска
+        // Р’С‹РІРµСЃРєР°
         txLine(600, 100, 600, 50);
         txLine(600, 50, 750,  50);
         txLine(750, 100, 750, 50);
         txLine(600, 100, 750, 100);
         txLine(638, 50,  638, 2);
         txLine(710, 50,  710, 2);
-        // Тeкст с вывески
+        // РўeРєСЃС‚ СЃ РІС‹РІРµСЃРєРё
         txSetColour(RGB(random(255),random(255),random(255)));
         txSelectFont ("Comic Sans MS", 80) ;
         txTextOut (625, 33, "BAR");
@@ -29,7 +29,7 @@ void stand()
 }
 void butulki(int x, int y)
 {
-    // Бутылки
+    // Р‘СѓС‚С‹Р»РєРё
     txSetColour(TX_RED);
     txLine(x-20, y+30,x-20, y);
     txLine(x, y,      x-20, y);
@@ -43,7 +43,7 @@ void butulki(int x, int y)
 }
 void drawStoika(int x, int y)
 {
-    // Стойка
+    // РЎС‚РѕР№РєР°
     txSetColour(TX_BLUE);
     txLine(x-990, y-200, x, y-200);
     txLine(x-998,  y-130,  x, y-130);
@@ -51,33 +51,33 @@ void drawStoika(int x, int y)
 }
 void chelovechek(int x, int y)
 {
-    // Человечек 1
+    // Р§РµР»РѕРІРµС‡РµРє 1
     txLine(1, 2,3,4);
-    // Ноги
+    // РќРѕРіРё
     txSetColour(TX_RED, 5);
     txLine(x, y+160, x+30, y+70);
     txLine(x+50, y+160, x+30, y+70);
-    // Тело
+    // РўРµР»Рѕ
     txLine(x+30, y, x+30, y+70);
     txLine(x+30, y, x+30, y+40);
     txCircle(x+30, y-20, 14);
-    // Ручки
+    // Р СѓС‡РєРё
     txLine(x+10, y+60, x+30, y);
     txLine(x+60, y+35, x+30, y);
 }
 
 void chelovechek2(int x, int y)
 {
-    // Человек 2
-    // Ноги
+    // Р§РµР»РѕРІРµРє 2
+    // РќРѕРіРё
     txSetColour(TX_GREEN, 5);
     txLine(x-20, y+160, x, y+70);
     txLine(x+30, y+160, x, y+70);
-    // Тело
+    // РўРµР»Рѕ
     txLine(x, y+70, x, y);
     txLine(x+10, y-10, x, y);
     txCircle(x-10, y-15, 14);
-    // Ручки
+    // Р СѓС‡РєРё
     txLine(x, y, x+15,      y+30);
     txLine(x+15, y+60, x-15, y+30);
     // 2
